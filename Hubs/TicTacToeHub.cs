@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace WebSocket.Hubs
 {
-    public class ChatHub : Hub
+    public class TicTacToeHub : Hub
     {
-        public async Task SendMessage(string user, string message)
-        {
-            await Clients.All.SendAsync("ReceiveMessage", Context.ConnectionId, message);
-        }
-
         public async Task SetPlayer1()
         {
             await Clients.All.SendAsync("SetPlayer1", Context.ConnectionId);

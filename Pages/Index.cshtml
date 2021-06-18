@@ -1,76 +1,63 @@
 ﻿@page
 <div class="container">
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">&nbsp;</div>
-        <div class="col-6">
-            User..........<input type="text" id="userInput" />
-            <br />
-            Message...<input type="text" id="messageInput" />
-            <input type="button" id="sendButton" value="Send Message" />
-            @*<input type="button" id="SqrGame" value="Quit Message" />*@
+    <div class="row text-center">
+        <div class="col-4">
+            <button onclick="SetPlayer1()" id="btnP1" class="btn btn-primary">Player 1</button>
+            <p id="player1">
+                Jogador 1
+            </p>
+        </div>
+        <div class="row col-4 mx-0">
+            <div>Status:</div>
+            <div id="turnPlayer">Esperando Jogadores</div>
+        </div>
+        <div class="col-4">
+            <button onclick="SetPlayer2()" id="btnP2" class="btn btn-danger">Player 2</button>
+            <p id="player2">
+                Jogador 2
+            </p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <hr />
-        </div>
+    <table id="veia">
+        <tr>
+            <td>
+                <input type="button" onclick="SqrGame(0)" value=" " />
+            </td>
+            <td class="vert">
+                <input type="button" onclick="SqrGame(1)" value=" " />
+            </td>
+            <td>
+                <input type="button" onclick="SqrGame(2)" value=" " />
+            </td>
+        </tr>
+        <tr>
+            <td class="hori">
+                <input type="button" onclick="SqrGame(3)" value=" " />
+            </td>
+            <td class="vert hori">
+                <input type="button" onclick="SqrGame(4)" value=" " />
+            </td>
+            <td class="hori">
+                <input type="button" onclick="SqrGame(5)" value=" " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="SqrGame(6)" value=" " />
+            </td>
+            <td class="vert">
+                <input type="button" onclick="SqrGame(7)" value=" " />
+            </td>
+            <td>
+                <input type="button" onclick="SqrGame(8)" value=" " />
+            </td>
+        </tr>
+    </table>
+    <div class="col-12 mt-3 text-center">
+        <button onclick="ResetGame()" id="btnReset">Reset</button>
+        <div class="my-2 mx-auto" style="width: 5px; height: 5px; margin: auto; background-color: grey" id="status"></div>
     </div>
-    <div class="row">
-        <div class="col-6">&nbsp;</div>
-        <div class="col-6">
-            <ul id="messagesList"></ul>
-        </div>
-    </div>
-    <div>
-        <button onclick="SetPlayer1()" id="btnP1">Player 1</button>
-        <p id="player1">
-            Jogador 1
-        </p>
-        <hr />
-        <button onclick="SetPlayer2()" id="btnP2">Player 2</button>
-        <p id="player2">
-            Jogador 2
-        </p>
-    </div>
-    <div class="row">
-        <table id="veia">
-            <tr>
-                <td>
-                    <input type="button" onclick="SqrGame(0)" value=" " />
-                </td>
-                <td class="vert">
-                    <input type="button" onclick="SqrGame(1)" value=" " />
-                </td>
-                <td>
-                    <input type="button" onclick="SqrGame(2)" value=" " />
-                </td>
-            </tr>
-            <tr>
-                <td class="hori">
-                    <input type="button" onclick="SqrGame(3)" value=" " />
-                </td>
-                <td class="vert hori">
-                    <input type="button" onclick="SqrGame(4)" value=" " />
-                </td>
-                <td class="hori">
-                    <input type="button" onclick="SqrGame(5)" value=" " />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="button" onclick="SqrGame(6)" value=" " />
-                </td>
-                <td class="vert">
-                    <input type="button" onclick="SqrGame(7)" value=" " />
-                </td>
-                <td>
-                    <input type="button" onclick="SqrGame(8)" value=" " />
-                </td>
-            </tr>
-        </table>
-    </div>    
-    <button onclick="ResetGame()">Reset</button>
+
 </div>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>
-<script src="~/js/chat.js"></script>
+<script src="~/js/tictactoe.js"></script>

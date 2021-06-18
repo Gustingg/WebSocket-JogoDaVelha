@@ -52,7 +52,7 @@ namespace WebSocket
 
             app.UseSignalR(routes =>
             {
-                routes.MapHub<ChatHub>("/chathub");
+                routes.MapHub<TicTacToeHub>("/chathub");
             });
             app.UseHttpsRedirection();
             app.UseStaticFiles();
